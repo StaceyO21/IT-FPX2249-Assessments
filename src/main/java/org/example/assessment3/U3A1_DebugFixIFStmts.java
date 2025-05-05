@@ -1,5 +1,5 @@
 
-package u3a1_debugfixifstmts;
+package org.example.assessment3;
 
 import java.util.Scanner;
 
@@ -37,11 +37,13 @@ public class U3A1_DebugFixIFStmts {
                     "user made second choice (" + secondChoice + ")\n" +
                     "number of choices = 2");
 
-        } System.out.println("State of choices: \n" +
-                "user made first choice (" + firstChoice + ")\n" +
-                "user made second choice (" + secondChoice + ")\n" +
-                "user made third choice (" + thirdChoice + ")\n" +
-                "number of choices = 3");
+        } else {
+            System.out.println("State of choices: \n" +
+                    "user made first choice (" + firstChoice + ")\n" +
+                    "user made second choice (" + secondChoice + ")\n" +
+                    "user made third choice (" + thirdChoice + ")\n" +
+                    "number of choices = 3");
+        }
     }
 
 }
