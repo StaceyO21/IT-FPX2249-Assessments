@@ -23,20 +23,21 @@ public class U3A1_DebugFixIFStmts {
         int thirdChoice = input.nextInt();
 
         //Determine & print the state of choices made
-        if (firstChoice == 0)
+        if (firstChoice == 0) {
             System.out.println("State of choices: \n" +
                     "no choices made yet");
-        if (secondChoice == 0)
+        }
+        if (secondChoice == 0) {
             System.out.println("State of choices: \n" +
                     "user made first choice (" + firstChoice + ")\n" +
                     "number of choices = 1");
-        else if (thirdChoice == 0)
+        } else if (thirdChoice == 0) {
             System.out.println("State of choices: \n" +
                     "user made first choice (" + firstChoice + ")\n" +
                     "user made second choice (" + secondChoice + ")\n" +
                     "number of choices = 2");
 
-        System.out.println("State of choices: \n" +
+        } System.out.println("State of choices: \n" +
                 "user made first choice (" + firstChoice + ")\n" +
                 "user made second choice (" + secondChoice + ")\n" +
                 "user made third choice (" + thirdChoice + ")\n" +
