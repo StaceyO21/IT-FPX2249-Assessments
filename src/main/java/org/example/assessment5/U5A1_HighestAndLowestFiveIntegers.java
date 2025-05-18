@@ -5,31 +5,46 @@ import java.util.Scanner;
 public class U5A1_HighestAndLowestFiveIntegers {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         System.out.println("Teacher's Copy");
-        System.out.print("Enter 5 seperate integers: ");
+        System.out.print("Enter 5 separate integers: ");
 
-        int[] nums = new int[]{scanner.nextInt()};
+        // initialize array
+        int[] nums = new int[5];
 
-        int lowestNum = nums[0];
-        int highestNum = nums[0];
-
-        for (int num : nums){
-            if (lowestNum > num) {
-                lowestNum = num;
-            }
-            System.out.println("Lowest integer is " + lowestNum);
-
-            for (int num2 : nums) {
-                if (highestNum < num2) {
-                    highestNum = num2;
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = input.nextInt();
+        }
+        System.out.println("Lowest integer is " + getMinValue(nums));
+        System.out.println("Highest integer is " + getMaxValue(nums));
+    }
+        // method to get max value
+        public static int getMaxValue(int[] nums) {
+            int maxValue = nums[0];
+            for (int i = 1; i < nums.length; i++){
+                if (nums[i] > maxValue){
+                    maxValue = nums[i];
                 }
-                System.out.println("Highest integer is " + highestNum);
             }
+            return maxValue;
+        }
+
+        //get the min value
+    public static int getMinValue(int[] nums) {
+        int minValue = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < minValue) {
+                minValue = nums[i];
+            }
+        }
+        return minValue;
+    }
+
+
         }
 
 
-    }
 
-}
+
+
