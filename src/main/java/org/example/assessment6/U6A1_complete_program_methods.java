@@ -8,31 +8,39 @@ public class U6A1_complete_program_methods {
         Scanner input = new Scanner(System.in);
         System.out.println("Teacher's Copy");
 
-        // print course information
-        System.out.println("Type the number inside the [] to register for the course\n" +
-                "[1] IT4782\n" +
-                "[2] IT4784\n" +
-                "[3] IT4786\n" +
-                "[4] IT4789\n" +
-                "[5] IT2230\n" +
-                "[6] IT3345\n" +
-                "[7] IT3349\n" +
-                "Enter your choice: ");
+        String tryAgain;
+
+        do {
+            // print course information
+            System.out.println("Type the number inside the [] to register for the course\n" +
+                    "[1] IT4782\n" +
+                    "[2] IT4784\n" +
+                    "[3] IT4786\n" +
+                    "[4] IT4789\n" +
+                    "[5] IT2230\n" +
+                    "[6] IT3345\n" +
+                    "[7] IT3349\n" +
+                    "Enter your choice: ");
 
 
-        // get user input
-        int choice = input.nextInt();
+            // get user input
+            int choice = input.nextInt();
 
-        //validate choice
-        if(choice < 1 || choice > 7){
-            System.out.println("**Invalid** - Your selection of is not a recognized course.");
-            return;
-        }
+            //validate choice
+            if (choice < 1 || choice > 7) {
+                System.out.println("**Invalid** - Your selection of is not a recognized course.");
+            } else {
+                String courseChoice = getCourseCode(choice);
+                System.out.println("Registration Confirmed for course " + courseChoice);
+                System.out.println("Current course registration: {" + courseChoice + "}");
+            }
 
-        String courseChoice = getCourseCode(choice);
+            // ask if user would like to try again
+            System.out.println("Do you want to try again? (Y|N)? : ");
+            tryAgain = input.next();
 
-        System.out.println("Registration Confirmed for course " + courseChoice);
-        System.out.println("Current course registration: {" + courseChoice + "}" );
+        } while (tryAgain.equalsIgnoreCase("y"));
+        System.out.println("Thank you for using course registration.");
     }
 
     public static String getCourseCode(int choice) {
