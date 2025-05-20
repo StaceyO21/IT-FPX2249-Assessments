@@ -35,15 +35,17 @@ public class U6A1_complete_program_methods {
 
             String courseChoice = getCourseCode(choice);
             // validate user choice
-            if (registeredCourses.contains(courseChoice)){
-                System.out.println("You have already registered for this " + courseChoice + " course.");
+            if (registeredCourses.size() >= 3){
+                System.out.println("You can not register for more than 9 credit hours."); // no more than 3 courses registered
+            } else if (registeredCourses.contains(courseChoice)){
+                System.out.println("You have already registered for this " + courseChoice + " course."); // can not register for the same course more than once
             } else if (choice < 1 || choice > 7) {
-                System.out.println("**Invalid** - Your selection of is not a recognized course.");
+                System.out.println("**Invalid** - Your selection of is not a recognized course."); // user choice has to be an available course selection
             } else {
-                registeredCourses.add(courseChoice);
+                registeredCourses.add(courseChoice); // if all choices pass then they get added to course registration set
             }
 
-            System.out.println("Current course registration: { " + registeredCourses + " }");
+            System.out.println("Current course registration: { " + String.join(", ", registeredCourses) + " }");
 
             // ask if user would like to try again
             System.out.println("Do you want to try again? (Y|N)? : ");
@@ -67,10 +69,5 @@ public class U6A1_complete_program_methods {
             case 7: return "IT3349";
             default: return "Unknown"; // this shouldn't happen if validated
         }
-    }
-
-    public static void validateCourseCode(int choice) {
-        //validate choice is the correct course number
-
     }
 }
