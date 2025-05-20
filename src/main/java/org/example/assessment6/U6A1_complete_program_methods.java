@@ -1,15 +1,22 @@
 package org.example.assessment6;
 
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class U6A1_complete_program_methods {
 
+    public static String courseChoice;
+    public static Set<String> registeredCourses = new HashSet<>();
+
     public static void main(String[] args) {
+
         Scanner input = new Scanner(System.in);
         System.out.println("Teacher's Copy");
 
         String tryAgain;
 
+        int choice;
         do {
             // print course information
             System.out.println("Type the number inside the [] to register for the course\n" +
@@ -24,16 +31,19 @@ public class U6A1_complete_program_methods {
 
 
             // get user input
-            int choice = input.nextInt();
+            choice = input.nextInt();
 
-            //validate choice
-            if (choice < 1 || choice > 7) {
+            String courseChoice = getCourseCode(choice);
+            // validate user choice
+            if (registeredCourses.contains(courseChoice)){
+                System.out.println("You have already registered for this " + courseChoice + " course.");
+            } else if (choice < 1 || choice > 7) {
                 System.out.println("**Invalid** - Your selection of is not a recognized course.");
             } else {
-                String courseChoice = getCourseCode(choice);
-                System.out.println("Registration Confirmed for course " + courseChoice);
-                System.out.println("Current course registration: {" + courseChoice + "}");
+                registeredCourses.add(courseChoice);
             }
+
+            System.out.println("Current course registration: { " + registeredCourses + " }");
 
             // ask if user would like to try again
             System.out.println("Do you want to try again? (Y|N)? : ");
@@ -41,7 +51,9 @@ public class U6A1_complete_program_methods {
 
         } while (tryAgain.equalsIgnoreCase("y"));
         System.out.println("Thank you for using course registration.");
+
     }
+
 
     public static String getCourseCode(int choice) {
         // switch statement to determine users choice to the course number
@@ -55,5 +67,10 @@ public class U6A1_complete_program_methods {
             case 7: return "IT3349";
             default: return "Unknown"; // this shouldn't happen if validated
         }
+    }
+
+    public static void validateCourseCode(int choice) {
+        //validate choice is the correct course number
+
     }
 }
