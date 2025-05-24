@@ -60,7 +60,7 @@ public class U8A1_2DConsoleRegisterForCourse {
                     totalCredit += Integer.parseInt(courses[1][choice-1]);
                     if (validChoices[0][0].equals("")) {
                         validChoices[0][0] = Integer.toString(choice);
-                        validChoices[0] = courses[0][choice-1];
+                        validChoices[0][1] = courses[0][choice-1];
                     } else if (validChoices[1][0].equals("")) {
                         validChoices[1][0] = Integer.toString(choice);
                         validChoices[1][1] = courses[0][choice-1];
@@ -87,7 +87,7 @@ public class U8A1_2DConsoleRegisterForCourse {
     //[selection number]Course Code (Course Credit Hours)
     //from the courses array one per line
     //and then prompts the use to make a number selection
-    public static int getChoice(String[] courses, Scanner input) {
+    public static int getChoice(String[][] courses, Scanner input) {
         System.out.println("Please type the number inside the [] to register for a course");
         System.out.println("The number inside the () is the credit hours for the course");
         for(int i = 0; i < courses[0].length; i++ )
@@ -110,7 +110,7 @@ public class U8A1_2DConsoleRegisterForCourse {
         if (choice < 1 || choice > 7)
             return -1;
         else if (choiceAsString.equals(validChoices[0][0])
-                || choiceAsString.equals(validChoices[])
+                || choiceAsString.equals(validChoices[1][0])
                 || choiceAsString.equals(validChoices[2][0]))
         return -2;
         else if ( totalCredit + Integer.parseInt(courses[1][choice-1]) > 9)
