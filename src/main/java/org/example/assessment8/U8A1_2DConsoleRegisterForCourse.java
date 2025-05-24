@@ -127,7 +127,7 @@ public class U8A1_2DConsoleRegisterForCourse {
         if (validChoices[0][0].equals(""))
             System.out.println("Current course registration:  { none } " );
         else if (validChoices[1][0].equals(""))
-            System.out.println("Current course registration: { " + validChoices[0][i] + " }" );
+            System.out.println("Current course registration: { " + validChoices[0][1] + " }" );
         else if (validChoices[2][0].equals(""))
             System.out.println("Current course registration: { " + validChoices[0][1] +
                     ", " + validChoices[1][1] + " }");
