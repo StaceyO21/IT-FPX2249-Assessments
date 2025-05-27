@@ -10,4 +10,19 @@ public class U9A1_Course {
         this.creditHours = creditHours;
     }
 
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+    }
+
+    public int getCreditHours() {
+        return creditHours;
+    }
+
+    public void setCreditHours(int creditHours) {
+        this.creditHours = creditHours;
+    }
 }
