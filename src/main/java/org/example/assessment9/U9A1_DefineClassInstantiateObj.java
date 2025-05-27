@@ -14,7 +14,7 @@ public class U9A1_DefineClassInstantiateObj {
                 new Course ("IT2249", 6),
         };
         for(int i = 0; i < 7; i++){
-            System.out.println("[" + (i + 1) +"]" + courses[i].getCourseCode() + " (" + courses[i].getCreditHours() + ")");
+            System.out.println("[" + (i + 1) +"]" + courses[i].getCourseCode() + "(" + courses[i].getCreditHours() + ")");
         }
     }
 }
