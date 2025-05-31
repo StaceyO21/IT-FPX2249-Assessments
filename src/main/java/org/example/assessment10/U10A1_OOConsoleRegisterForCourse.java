@@ -20,7 +20,7 @@ public class U10A1_OOConsoleRegisterForCourse {
 
         Course[] registeredCourses = new Course[3];
         int totalCredit = 0;
-        String yesOrNo;
+        String yesOrNo = "";
         int registeredCount = 0;
 
         do {
