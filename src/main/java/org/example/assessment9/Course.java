@@ -2,6 +2,8 @@ package org.example.assessment9;
 
 public class Course {
 
+    public String getCourseCode;
+    public String getCreditHours;
     private String courseCode = "";
     private int creditHours = 0;
 
